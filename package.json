@@ -1,0 +1,32 @@
+{
+  "name": "pure-norm",
+  "version": "0.1.0",
+  "description": "一个自动生成 pure-admin 规范的工具",
+  "type": "module",
+  "bin": {
+    "pure-norm": "dist/index.cjs"
+  },
+  "scripts": {
+    "dev": "tsup && cd play && pure-norm",
+    "build": "tsup"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@tsconfig/node18": "^18.2.2",
+    "@types/eslint": "^8.44.6",
+    "@types/fs-extra": "^11.0.3",
+    "@types/node": "^20.8.9",
+    "tsup": "^7.2.0"
+  },
+  "dependencies": {
+    "cac": "^6.7.14",
+    "fs-extra": "^11.1.1",
+    "picocolors": "^1.0.0",
+    "spinnies": "^0.5.1"
+  }
+}
