@@ -8,7 +8,11 @@
   },
   "scripts": {
     "dev": "tsup && cd play && pure-norm",
-    "build": "tsup"
+    "build": "tsup",
+    "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock,build}/**/*.{vue,js,ts,tsx}\" --fix",
+    "lint:prettier": "prettier --write  \"src/**/*.{js,ts,json,tsx,css,scss,vue,html,md}\"",
+    "lint": "pnpm lint:eslint && pnpm lint:prettier",
+    "prepare": "husky install"
   },
   "engines": {
     "node": ">=18"
@@ -17,11 +21,24 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@commitlint/cli": "^17.7.2",
+    "@commitlint/config-conventional": "^17.7.0",
     "@tsconfig/node18": "^18.2.2",
     "@types/eslint": "^8.44.6",
     "@types/fs-extra": "^11.0.3",
     "@types/node": "^20.8.9",
-    "tsup": "^7.2.0"
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "eslint": "^8.50.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "tsup": "^7.2.0",
+    "vue-eslint-parser": "^9.3.1"
   },
   "dependencies": {
     "cac": "^6.7.14",
