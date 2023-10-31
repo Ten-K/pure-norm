@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "一个自动生成 pure-admin 规范的工具",
   "type": "module",
+  "main": "dist/index.cjs",
   "bin": {
     "pure-norm": "dist/index.cjs"
   },
@@ -18,6 +19,9 @@
     "node": ">=18"
   },
   "packageManager": "pnpm@8.9.2",
+  "files": [
+    "dist"
+  ],
   "keywords": [],
   "author": "",
   "license": "MIT",
