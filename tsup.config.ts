@@ -1,18 +1,18 @@
-import { defineConfig } from 'tsup'
+import { defineConfig } from "tsup";
 
 const config = {
-  outDir: 'dist',
+  outDir: "dist",
   clean: true,
   minify: true,
   sourcemap: false
-}
+};
 
 export default defineConfig([
   {
-    entry: ['index.ts'],
+    entry: ["src/index.ts"],
     publicDir: "./publish-template",
     treeshake: true,
-    format: ['cjs'],
+    format: ["cjs"],
     ...config
   }
-])
+]);

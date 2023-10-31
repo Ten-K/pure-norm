@@ -41,6 +41,13 @@ pnpm run pure-norm
 yarn run pure-norm
 ```
 
+支持可配置：
+
+```bash
+# pure-norm --noStylelint
+-s, --noStylelint      不使用stylelint
+```
+
 ## ⚠️ 注意
 
 - 只适用于 **vue3** + **ts** 项目
