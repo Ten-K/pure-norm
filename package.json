@@ -22,9 +22,20 @@
   "files": [
     "dist"
   ],
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "norm",
+    "pure-norm"
+  ],
   "license": "MIT",
+  "author": {
+    "name": "Ten-K",
+    "email": "742798240@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ten-K/pure-norm.git"
+  },
+  "homepage": "https://github.com/Ten-K/pure-norm#readme",
   "devDependencies": {
     "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
