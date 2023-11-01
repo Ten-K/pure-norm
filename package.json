@@ -1,6 +1,6 @@
 {
   "name": "pure-norm",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "一个自动生成 pure-admin 规范的工具",
   "type": "module",
   "main": "dist/index.cjs",
