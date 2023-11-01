@@ -7,9 +7,10 @@
     "prettier --cache --write--parser json"
   ],
   "package.json": ["prettier --cache --write"],
-  "*.vue": ["prettier --write", "eslint --cache --fix"],
+  "*.vue": ["prettier --write", "eslint --cache --fix", "stylelint --fix"],
   "*.{css,scss,html}": [
-    "prettier --cache --ignore-unknown --write"
+    "prettier --cache --ignore-unknown --write",
+    "stylelint --fix"
   ],
   "*.md": ["prettier --cache --ignore-unknown --write"]
 }

@@ -45,16 +45,24 @@ export default function render() {
   };
   const needsDep = noStylelint ? coreDep : deepMerge(coreDep, stylelintDep);
 
-  const scripts: Record<string, string> = {
+  const coreScripts: Record<string, string> = {
     "lint:eslint":
       'eslint --cache --max-warnings 0  "{src,mock,build}/**/*.{vue,js,ts,tsx}" --fix',
     "lint:prettier":
       'prettier --write  "src/**/*.{js,ts,json,tsx,css,scss,vue,html,md}"',
-    "lint:stylelint":
-      'stylelint --cache --fix "**/*.{html,vue,css,scss}" --cache --cache-location node_modules/.cache/stylelint/',
-    lint: "pnpm lint:eslint && pnpm lint:prettier && pnpm lint:stylelint",
+    lint: "pnpm lint:eslint && pnpm lint:prettier",
     prepare: "husky install"
   };
+
+  const stylelintScripts = {
+    "lint:stylelint":
+      'stylelint --cache --fix "**/*.{html,vue,css,scss}" --cache --cache-location node_modules/.cache/stylelint/',
+    lint: "pnpm lint:eslint && pnpm lint:prettier && pnpm lint:stylelint"
+  };
+
+  const scripts = noStylelint
+    ? coreScripts
+    : Object.assign(coreScripts, stylelintScripts);
 
   const packageJsonPath = getpath("package.json");
   const existingPkg = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
@@ -86,6 +94,7 @@ export default function render() {
       path.resolve(__dirname, "stylelint"),
       getpath(getEnv("cwd") as string)
     );
+  return;
 
   // 下载相关依赖
   const spinner = { interval: 80, frames: ["🍇", "🍈", "🍉", "🍋"] };
