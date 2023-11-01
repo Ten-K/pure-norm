@@ -94,7 +94,6 @@ export default function render() {
       path.resolve(__dirname, "stylelint"),
       getpath(getEnv("cwd") as string)
     );
-  return;
 
   // 下载相关依赖
   const spinner = { interval: 80, frames: ["🍇", "🍈", "🍉", "🍋"] };
